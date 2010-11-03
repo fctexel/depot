@@ -1,8 +1,11 @@
 require 'test_helper'
 
 class ProductTest < ActiveSupport::TestCase
-  # Replace this with your real tests.
-  test "the truth" do
-    assert true
+  setup do
+    @product = products(:dvd)
+  end
+
+  test "Product should have a price with two decimals" do
+    assert_equal 349.99, @product.price
   end
 end

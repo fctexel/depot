@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(:version => 20101027183929) do
     t.string   "title"
     t.text     "description"
     t.string   "image_url"
-    t.decimal  "price",       :precision => 10, :scale => 0
+    t.float    "price"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
