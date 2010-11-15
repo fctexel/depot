@@ -12,8 +12,3 @@ two:
   image_url: MyString
   price: 9.99
   
-dvd:
-  title: DVD player
-  description: A super blue ray
-  image_url: /images/dvd.jpg
-  price: 349.99
