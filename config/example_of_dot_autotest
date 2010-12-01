@@ -1,0 +1,11 @@
+#Save this file in your home dir as .autotest
+
+
+require 'autotest/growl'
+require 'autotest/fsevent'
+
+class Autotest
+  def test_files_for(filename)
+    return Dir['test/**/*_test.rb']
+  end
+end
