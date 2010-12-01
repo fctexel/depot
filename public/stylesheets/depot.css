@@ -64,5 +64,11 @@
 	font-weight: bold;
 	border-top: 1px solid #595;
 	}
+/* for the cart in then sidebar */
+#cart table {
+	border-top: 1px dotted #595;
+	border-bottom: 1px dotted #595;
+	margin-bottom: 10px;
+}
 
 
