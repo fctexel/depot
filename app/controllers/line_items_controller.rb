@@ -5,7 +5,8 @@ class LineItemsController < ApplicationController
     @line_items = LineItem.all
 
     respond_to do |format|
-      format.html # index.html.erb
+      format.html {redirect_to(store_url)}
+      format.js { @current_item = @line_item}
       format.xml  { render :xml => @line_items }
     end
   end
