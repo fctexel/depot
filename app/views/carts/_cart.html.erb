@@ -1,16 +1,12 @@
 <% unless cart.line_items.empty? %>
-<div class="cart-title">Your Card </div>
-<table>
-	
-	<%= render(:partial => "cart_item", :collection => cart.line_items)%>
-	
+  <div class="cart-title">Your Card </div>
+  <table>
+    <%= render(:partial => "line_items/line_item", :collection => cart.line_items)%>
+    <tr class="total-line">
+      <td colspan="2">Total</td>
+      <td class="total-cell"><%= number_to_currency(cart.total_price) %></td>
+    </tr>
+  </table>
 
-	<tr class="total-line">
-		<td colspan="2">Total</td>
-		<td class="total-cell"><%= number_to_currency(cart.total_price) %></td>
-	</tr>
-</table>
-
-<%= button_to 'Empty cart', cart, :method=>:delete, :confirm => 'Are you sure'%>
-
+  <%= button_to 'Empty cart', cart, :method=>:delete, :confirm => 'Are you sure'%>
 <% end %>
