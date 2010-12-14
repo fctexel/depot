@@ -11,19 +11,19 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name, "Name:" %><br />
+    <%= f.label :name, "Name:" %>
     <%= f.text_field :name, :size=>40 %>
   </div>
   <div class="field">
-    <%= f.label :address, "Address:" %><br />
+    <%= f.label :address, "Address:" %>
     <%= f.text_area :address, :rows=>3, :cols=>40 %>
   </div>
   <div class="field">
-    <%= f.label :email, "E-Mail:" %><br />
+    <%= f.label :email, "E-Mail:" %>
     <%= f.email_field :email, :size=>40 %>
   </div>
   <div class="field">
-    <%= f.label :pay_type, "Pay with:" %><br />
+    <%= f.label :pay_type, "Pay with:" %>
     <%= f.select :pay_type, Order::PAYMENT_TYPES, :prompt =>"Select a payment method" %>
   </div>
   <%= f.submit "Place Order" %>
