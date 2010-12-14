@@ -4,7 +4,7 @@ one:
   name: MyString
   address: MyText
   email: MyString
-  pay_type: MyString
+  pay_type: Check
 
 two:
   name: MyString

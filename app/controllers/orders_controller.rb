@@ -25,7 +25,7 @@ class OrdersController < ApplicationController
   # GET /orders/new.xml
   def new
     if current_cart.line_items.empty?
-      redirect_to store_url, :notice=>"Your cart is empy"
+      redirect_to store_url, :notice=>"Your cart is empty"
       return 
     end    
     @order = Order.new
@@ -63,7 +63,7 @@ class OrdersController < ApplicationController
     @order = Order.find(params[:id])
 
     respond_to do |format|
-      if @order.update_attributes(params[:order])
+       if @order.update_attributes(params[:order])
         format.html { redirect_to(@order, :notice => 'Order was successfully updated.') }
         format.xml  { head :ok }
       else
