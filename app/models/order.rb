@@ -1,2 +1,4 @@
 class Order < ActiveRecord::Base
-end
+
+PAYMENT_TYPES =["Check", "Credit card", "Purchase order"]
+   end
