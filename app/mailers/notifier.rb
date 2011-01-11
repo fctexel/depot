@@ -18,9 +18,9 @@ class Notifier < ActionMailer::Base
   #
   #   en.notifier.order_shipped.subject
   #
-  def order_shipped
+  def order_shipped(order)
     @greeting = "Hi"
 
-    mail :to => "dave@example.org"
+    mail :to => "dave@example.org", :subject => 'Pragmatic Store Order Shipped'
   end
 end
