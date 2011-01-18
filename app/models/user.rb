@@ -35,10 +35,17 @@ class User < ActiveRecord::Base
     def password_must_be_present
       errors.add(:password, "Missing password") unless hashed_password.present?
     end
-    
+    after_destroy :ensure_an_admin_remains
+    def ensure_an_admin_remains
+    if user.count.zero?
+      raise"can't delete last user"
+    end
+  end
+  
     def generate_salt
       self.salt=self.object_id.to_s + rand.to_s
     end
+ 
   end
   
     
