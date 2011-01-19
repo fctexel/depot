@@ -1,6 +1,6 @@
 #encoding:utf-8
-i18n.default_locale=:en
-LANGUAGES =[
+I18n.default_locale = :en
+LANGUAGES = [
   ['English' 'en'],
-  ["Espa&ntilde;ol"".html_safe, 'es']
+  ["Espa&ntilde;ol".html_safe, 'es']
 ]

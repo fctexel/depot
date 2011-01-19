@@ -12,6 +12,7 @@
 <body id="store">
   <div id="banner">
     <%= image_tag("logo.png") %>
+<%=@page_title ||t('.title') %>
     <%= @page_title || "Pragmatic Bookshelf" %><!-- <label id="code.depot.e.title"/> -->
   </div>
   <div id="columns">
@@ -22,12 +23,14 @@
             <%= render @cart %>
           <% end %>
         <% end %>
+
+
       </div>
-      <a href="/">Home</a><br />
-      <a href="http://www..../faq">Questions</a><br />
-      <a href="http://www..../news">News</a><br />
-      <a href="http://www..../contact">Contact</a><br />
-<br />
+      <a href="/"><%= t('.home') %> </a> <br />
+<a href="/faq">,<%= t('.questions') %> </a> <br />
+<a href="/news">,<%= t('.news') %> </a> <br />
+<a href="/contact">,<%= t('.contact') %> </a> <br />
+      
 	<%if session[:user_id]%>
 	<br />
 		<%= link_to 'orders', orders_path %><br />

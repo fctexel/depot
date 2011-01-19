@@ -12,11 +12,11 @@ class ApplicationController < ActionController::Base
     session[:cart_id] = cart.id
     cart
   end
-  
+
   protected
   def set_i18n_locale_from_params
     if params[:locale]
-      if I18n.avaiable_lacales.include?(params[locale].to_sym)
+      if I18n.available_locales.include?(params[locale].to_sym)
         I18n.locale =params[:locale]
       else
         flash.now[:notice] =
@@ -30,9 +30,8 @@ class ApplicationController < ActionController::Base
   end
 end
 
-  def authorize
-    unless User.find_by_id(session[:user_id])
-      redirect_to login_url, :notice => "Please log in"
-    end
+def authorize
+  unless User.find_by_id(session[:user_id])
+    redirect_to login_url, :notice => "Please log in"
   end
 end
