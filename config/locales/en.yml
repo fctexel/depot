@@ -3,10 +3,10 @@
 
 en:
  layouts:
-   application:
-    title: "Pragmatic Bookshelf"
-    home: "Home"
-    questions: "Questions"
-    news: "News"
-    contact: "Contact"
+  application:
+   title: "Pragmatic Bookshelf"
+   home: "Home"
+   questions: "Questions"
+   news: "News"
+   contact: "Contact"
                               

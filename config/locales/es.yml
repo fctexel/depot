@@ -3,10 +3,10 @@
 
 es:
  layouts:
-   application:
-    title: "Publicationes de Pragmatic"
-    home: "Inicio"
-    questions:"Preguntas"
-    news: "Noticias"
-    contact: "Contacto"
+  application:
+   title: "Publicationes de Pragmatic"
+   home: "Inicio"
+   questions: "Preguntas"
+   news: "Noticias"
+   contact: "Contacto"
                               

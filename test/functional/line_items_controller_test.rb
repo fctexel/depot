@@ -50,6 +50,6 @@ class LineItemsControllerTest < ActionController::TestCase
       xhr :post, :create, :product_id => products(:ruby).id
     end
     assert_response :success
-    assert_select 'tr#current_item', /1 &times;\n     Programming Ruby 1.9/
+    assert_select 'tr#current_item', /1 &times;\n\s*Programming Ruby 1.9/
   end
 end

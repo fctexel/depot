@@ -2,7 +2,9 @@ require 'test_helper'
 
 class NotifierTest < ActionMailer::TestCase
   test "order_received" do
-    mail = Notifier.order_received(orders(:one))
+    order = orders(:one)
+    order.line_items << line_items(:one)
+    mail = Notifier.order_received(order)
     assert_equal "Pragmatic Store Order Confirmation", mail.subject
     assert_equal ["dave@example.org"], mail.to
     assert_equal ["depot@example.com"], mail.from
@@ -10,11 +12,13 @@ class NotifierTest < ActionMailer::TestCase
   end
 
   test "order_shipped" do
-    mail = Notifier.order_shipped(orders(:one))
+    order = orders(:one)
+    order.line_items << line_items(:one)
+    mail = Notifier.order_shipped(order)
     assert_equal "Pragmatic Store Order Shipped", mail.subject
     assert_equal ["dave@example.org"], mail.to
     assert_equal ["depot@example.com"], mail.from
-    assert_match /<td>1&times;<\/td>\s*<td>Programming Ruby 1.9<\/td>/,mail.body.encoded
+    assert_match /<td>1 &times;<\/td>\s*<td>Programming Ruby 1.9<\/td>/,mail.body.encoded
   end
 
 end
